@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/le-mystere-de-la-salle-jaune/examen-app.svg?branch=master)](https://travis-ci.org/le-mystere-de-la-salle-jaune/examen-app)
+
 # SuperApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
