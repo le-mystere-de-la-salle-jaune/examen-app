@@ -7,7 +7,7 @@ import { Stagiaire } from '../domains'
 })
 export class ListeStagiaireComponent implements OnInit {
 
-  private stagiaires:Array<Stagiaire> = [];
+  public stagiaires:Array<Stagiaire> = [];
 
   constructor() { 
 
