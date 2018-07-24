@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Stagiaire } from '../domains';
 
 @Component({
   selector: 'app-choix-stagiaire',
@@ -8,14 +7,10 @@ import { Stagiaire } from '../domains';
 })
 export class ChoixStagiaireComponent implements OnInit {
 
-
-
-  constructor() {
-    
-   }
+  constructor() { 
+  }
 
   ngOnInit() {
   }
-
 
 }

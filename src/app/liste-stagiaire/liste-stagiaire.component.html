@@ -1,0 +1,9 @@
+
+  <div class="text-center">
+    <h2>Veuillez choisir un stagiaire.</h2>
+  </div>
+  <div class="row ml-2">
+    <div *ngFor="let s of stagiaires">
+      <app-stagiaire [stagiaire]="s"></app-stagiaire>
+    </div>
+  </div>
