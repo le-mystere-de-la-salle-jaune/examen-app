@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stagiaire } from '../domains'
+import { StagiaireService } from '../service/stagiaire.service';
 @Component({
   selector: 'app-liste-stagiaire',
   templateUrl: './liste-stagiaire.component.html',
@@ -7,17 +8,19 @@ import { Stagiaire } from '../domains'
 })
 export class ListeStagiaireComponent implements OnInit {
 
-  public stagiaires:Array<Stagiaire> = [];
+  public stagiaires: Array<Stagiaire> = [];
 
-  constructor() { 
+  constructor(private _stagiaireService: StagiaireService) {
+      const stagiaires$ = this._stagiaireService.listerStagiaires();
 
-      this.stagiaires.push(
-        new Stagiaire('kaczmarek', 'noel', 'kaczmarek.noel@gmail.com', 'img'),
-        new Stagiaire('kaczmarek2', 'noel2', 'kaczmarek.noel2@gmail.com', 'img2'),
-        new Stagiaire('kaczmarek3', 'noel3', 'kaczmarek.noel3@gmail.com', 'img3'),
-        new Stagiaire('kaczmarek4', 'noel4', 'kaczmarek.noel4@gmail.com', 'img4')
-    )
-   }
+      stagiaires$
+        .then((listeStagiaires: Array<Stagiaire>) => {
+          this.stagiaires = listeStagiaires;
+        })
+        .catch(err => {
+          console.log(err)
+        });
+  }
 
   ngOnInit() {
   }

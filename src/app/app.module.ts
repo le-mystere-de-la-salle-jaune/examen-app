@@ -7,6 +7,7 @@ import { ChoixStagiaireComponent } from './choix-stagiaire/choix-stagiaire.compo
 import { BandeauComponent } from './bandeau/bandeau.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { ListeStagiaireComponent } from './liste-stagiaire/liste-stagiaire.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ListeStagiaireComponent } from './liste-stagiaire/liste-stagiaire.compo
     ListeStagiaireComponent
   ],
   imports: [
-    BrowserModule, MDBBootstrapModule
+    BrowserModule, MDBBootstrapModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
