@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Resultat } from '../domains';
+import { ResultatsService } from '../service/resultats.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-liste-resultats',
@@ -7,7 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeResultatsComponent implements OnInit {
 
-  constructor() { }
+  public resultats: Array<Resultat> = []
+  stagiaireId: string
+
+  constructor(private _resultatService: ResultatsService, private route: ActivatedRoute) {
+    this.stagiaireId = route.snapshot.paramMap.get("id")
+    const examens$ = this._resultatService.listerResultats(this.stagiaireId)
+      .then(
+        (listeResultats: Array<Resultat>) => {
+          this.resultats = listeResultats;
+        }
+      ).catch(
+        (err: any) => {
+          console.log(err)
+        }
+      )
+   }
 
   ngOnInit() {
   }

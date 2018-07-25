@@ -9,12 +9,14 @@
             <th>Action</th>
         </tr>
     </thead>
-    <!-- <tbody *ngFor="let r of resultats">
+    <tbody *ngFor="let r of resultats">
         <tr>
-            <td>{{r.date}}</td>
+            <td><i>Date coming soon</i></td>
+            <td>{{r.titre}} ({{r.nbQuestions}} questions)</td>
+            <td>{{r.noteSur20}}</td>
             <td>
-                <a routerLink="{{e.id}}" class="btn btn-primary">Démarrer</a>
+                <a routerLink="{{r.id}}" class="btn btn-primary">Voir le détail</a>
             </td>
         </tr>
-    </tbody> -->
+    </tbody>
 </table>
