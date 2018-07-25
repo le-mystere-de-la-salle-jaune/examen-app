@@ -1,11 +1,11 @@
 <div class="col-12 text-center">
   <div class="card mb-3 box-shadow">
-    <img src="{{stagiaire.photoUrl}}" class="card-img-top" alt="Votre photo" height="250" />
+    <img src="{{stagiaire.photoUrl}}" class="card-img-top" alt="Votre photo" height="250"/>
     <div class="card-body">
       <h4 class="my-0 font-weight-normal">{{stagiaire.prenom}} {{stagiaire.nom}} </h4>
     </div>
     <div class="card-footer">
-      <button class="btn btn-primary">Choisir</button>
+      <a routerLink="/{{stagiaire.id}}/examens" class="btn btn-primary">Choisir</a>
     </div>
   </div>
 </div>

@@ -1,7 +1,9 @@
 export class Stagiaire{
-    constructor(private _nom:string, private _prenom:string, private _mail:string, private _photoUrl:string){
+    constructor(private _id:number,private _nom:string, private _prenom:string, private _mail:string, private _photoUrl:string){
 
     }
+
+    get id() {return this._id}
 
     get nom() {return this._nom}
     set nom(nom:string){ this._nom = nom }
@@ -14,4 +16,13 @@ export class Stagiaire{
 
     get photoUrl() { return this._photoUrl }
     set photoUrl(url) { this._photoUrl = url }
+}
+
+export class Examen{
+    constructor(private _id:number, private _titre:string){
+
+    }
+    
+    get id() { return this._id }
+    get titre() { return this._titre }
 }

@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Libellé</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let e of examens">
+      <tr>
+        <td>{{e.titre}}</td>
+        <td><a routerLink="{{e.id}}" class="btn btn-primary">Démarrer</a></td>
+      </tr>
+  </tbody>
+</table>

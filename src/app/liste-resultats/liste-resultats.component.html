@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date/heure de passage</th>
+            <th>Libellé</th>
+            <th>Note (/20)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let r of resultats">
+        <tr>
+            <td>{{r.date}}</td>
+            <td>
+                <a routerLink="{{e.id}}" class="btn btn-primary">Démarrer</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
