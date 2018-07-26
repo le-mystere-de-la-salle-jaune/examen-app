@@ -16,4 +16,11 @@ export class StagiaireService {
         (data: any[]) => data.map(el => new Stagiaire(el.id, el.nom, el.prenom, el.email, el.photo_url))
       );
   }
+
+  listerStagiaire(id:string):Promise<Stagiaire>{
+    return this._http.get(`${environment.backendUrl}/api/stagiaires/${id}`).toPromise()
+    .then(
+      (data: any) =>  new Stagiaire(data.id, data.nom, data.prenom, data.email, data.photo_url)
+    );
+  }
 }

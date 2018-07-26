@@ -5,7 +5,7 @@
       <h4 class="my-0 font-weight-normal">{{stagiaire.prenom}} {{stagiaire.nom}} </h4>
     </div>
     <div class="card-footer">
-      <a routerLink="/{{stagiaire.id}}/examens" class="btn btn-primary">Choisir</a>
+      <a routerLink="/{{stagiaire.id}}/examens" (click)="startCookie()"  class="btn btn-primary">Choisir</a>
     </div>
   </div>
 </div>
