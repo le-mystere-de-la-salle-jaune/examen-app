@@ -14,7 +14,7 @@ export class ListeResultatsComponent implements OnInit {
   stagiaireId: string
 
   constructor(private _resultatService: ResultatsService, private route: ActivatedRoute) {
-    this.stagiaireId = route.snapshot.paramMap.get("id")
+    this.stagiaireId = route.snapshot.paramMap.get("id");
     const examens$ = this._resultatService.listerResultats(this.stagiaireId)
       .then(
         (listeResultats: Array<Resultat>) => {

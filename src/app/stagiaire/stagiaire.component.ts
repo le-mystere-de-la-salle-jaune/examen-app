@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service'
 import { Stagiaire } from '../domains'
 @Component({
   selector: 'app-stagiaire',
@@ -9,9 +10,12 @@ export class StagiaireComponent implements OnInit {
 
   @Input() stagiaire:Stagiaire;
 
-  constructor() { }
+  constructor(private cookie:CookieService) { }
 
   ngOnInit() {
   }
 
+  startCookie(){
+    this.cookie.set("email", this.stagiaire.email);
+  }
 }
