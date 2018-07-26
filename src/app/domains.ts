@@ -1,21 +1,7 @@
 export class Stagiaire {
-    constructor(private _id: number, private _nom: string, private _prenom: string, private _mail: string, private _photoUrl: string) {
+    constructor(public id: number, public nom: string, public prenom: string, public email: string, public photo_url: string) {
 
     }
-
-    get id() { return this._id }
-
-    get nom() { return this._nom }
-    set nom(nom: string) { this._nom = nom }
-
-    get prenom() { return this._prenom }
-    set prenom(prenom: string) { this._prenom = prenom }
-
-    get email() { return this._mail }
-    set email(mail: string) { this._mail = mail }
-
-    get photoUrl() { return this._photoUrl }
-    set photoUrl(url) { this._photoUrl = url }
 
     static empty():Stagiaire {
         return new Stagiaire(undefined, undefined, undefined, undefined, undefined);

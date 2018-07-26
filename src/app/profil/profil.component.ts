@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Stagiaire } from '../domains';
 import { StagiaireService } from '../service/stagiaire.service';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '../../../node_modules/@angular/router';
+import { CookieService } from '../../../node_modules/ngx-cookie-service';
 
 @Component({
   selector: 'app-profil',
@@ -13,7 +14,7 @@ export class ProfilComponent implements OnInit {
   stagiaire = Stagiaire.empty();
   stagiaireId: string;
 
-  constructor(private stagiaireService: StagiaireService, private route: ActivatedRoute) {
+  constructor(private stagiaireService: StagiaireService, private route: ActivatedRoute, private router: Router, private cookie:CookieService) {
     this.stagiaireId = route.snapshot.paramMap.get("id");
      stagiaireService.listerStagiaire(this.stagiaireId)
       .then((s: Stagiaire) =>this.stagiaire =s)
@@ -25,6 +26,12 @@ export class ProfilComponent implements OnInit {
 
   submit() {
     console.log(this.stagiaire);
+    this.stagiaireService.updateStagiaire(this.stagiaire).then(
+      s => { 
+        this.cookie.delete('email');
+        this.router.navigate(['/']);
+      }
+    );
   }
 
 }
