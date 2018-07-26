@@ -24,8 +24,8 @@ export class StagiaireService {
       );
   }
 
-  updateStagiaire(ngForm):Promise<Stagiaire> {
-    return this._http.put(`${environment.backendUrl}/api/stagiaires`, ngForm)
+  updateStagiaire(stagiaire):Promise<Stagiaire> {
+    return this._http.put(`${environment.backendUrl}/api/stagiaires`, stagiaire)
       .toPromise()
       .then(
         (el: any) => new Stagiaire(el.id, el.nom, el.prenom, el.email, el.photo_url)      )
