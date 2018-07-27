@@ -11,15 +11,16 @@ export class ListeStagiaireComponent implements OnInit {
   public stagiaires: Array<Stagiaire> = [];
 
   constructor(private _stagiaireService: StagiaireService) {
-      const stagiaires$ = this._stagiaireService.listerStagiaires();
+    const stagiaires$ = this._stagiaireService.listerStagiaires();
 
-      stagiaires$
-        .then((listeStagiaires: Array<Stagiaire>) => {
-          this.stagiaires = listeStagiaires;
-        })
-        .catch(err => {
+    stagiaires$
+      .subscribe((listeStagiaires: Array<Stagiaire>) => {
+        this.stagiaires = listeStagiaires;
+      },
+        (err => {
           console.log(err)
-        });
+        })
+      )
   }
 
   ngOnInit() {

@@ -5,10 +5,10 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Date/heure de passage</th>
-            <th>Libellé</th>
-            <th>Note (/20)</th>
-            <th>Action</th>
+            <th scope="col">Date/heure de passage</th>
+            <th scope="col">Libellé</th>
+            <th scope="col">Note (/20)</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody *ngFor="let r of resultats | filtre:recherche:'titre'">

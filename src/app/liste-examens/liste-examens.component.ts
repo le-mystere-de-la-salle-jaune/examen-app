@@ -8,22 +8,20 @@ import { FiltrePipe } from '../pipes/filtre.pipe';
   selector: 'app-liste-examens',
   templateUrl: './liste-examens.component.html',
   styleUrls: ['./liste-examens.component.scss']
-
 })
 export class ListeExamensComponent implements OnInit {
 
   public examens: Array<Examen> = [];
-  stagiaireId:string;
+  stagiaireId: string;
   recherche: string //utilisé pour filtrer les résultats
 
   constructor(private _examenService: ExamensService, private route: ActivatedRoute) {
     this.stagiaireId = route.snapshot.paramMap.get("id")
     const examens$ = this._examenService.listerExamens(this.stagiaireId)
-      .then(
+      .subscribe(
         (listeExamens: Array<Examen>) => {
           this.examens = listeExamens;
-        }
-      ).catch(
+        },
         (err: any) => {
           console.log(err)
         }

@@ -5,13 +5,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Libellé</th>
-      <th>Action</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody *ngFor="let e of examens | filtre:recherche:'titre'">
       <tr>
-        <td>{{e.titre}}</td>
+        <td style="width: 90%">{{e.titre}}</td>
         <td><a routerLink="{{e.id}}" class="btn btn-primary">Démarrer</a></td>
       </tr>
   </tbody>
