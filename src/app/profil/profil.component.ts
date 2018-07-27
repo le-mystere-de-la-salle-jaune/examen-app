@@ -17,8 +17,9 @@ export class ProfilComponent implements OnInit {
   constructor(private stagiaireService: StagiaireService, private route: ActivatedRoute, private router: Router, private cookie:CookieService) {
     this.stagiaireId = route.snapshot.paramMap.get("id");
      stagiaireService.listerStagiaire(this.stagiaireId)
-      .then((s: Stagiaire) =>this.stagiaire =s)
-      .catch(err => console.log(err));
+      .subscribe(
+        (s: Stagiaire) =>this.stagiaire =s),
+        (err => console.log(err))
   }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class ProfilComponent implements OnInit {
 
   submit() {
     console.log(this.stagiaire);
-    this.stagiaireService.updateStagiaire(this.stagiaire).then(
+    this.stagiaireService.updateStagiaire(this.stagiaire).subscribe(
       s => { 
         this.cookie.delete('email');
         this.router.navigate(['/']);

@@ -18,16 +18,15 @@ export class ListeResultatsComponent implements OnInit {
   constructor(private _resultatService: ResultatsService, private route: ActivatedRoute) {
     this.stagiaireId = route.snapshot.paramMap.get("id");
     const examens$ = this._resultatService.listerResultats(this.stagiaireId)
-      .then(
+      .subscribe(
         (listeResultats: Array<Resultat>) => {
           this.resultats = listeResultats;
-        }
-      ).catch(
+        },
         (err: any) => {
           console.log(err)
         }
       )
-   }
+  }
 
   ngOnInit() {
   }
