@@ -1,0 +1,18 @@
+<app-bandeau></app-bandeau>
+
+<form (ngSubmit)="submit()" #formQuestion="ngForm">
+  
+  <h3>{{question.titre}} ?</h3>
+
+  
+   <div class="custom-control custom-radio" *ngFor="let opt of question.options">
+    <input type="radio" id="{{opt.id}}" name="customRadio" [(ngModel)]="idReponse" class="custom-control-input" [value]="opt.id">
+    <label class="custom-control-label" for="{{opt.id}}">{{opt.libelle}}</label>
+  </div>
+
+ 
+
+  <div class="form-group row justify-content-end mr-1">
+    <button type="submit" class="btn btn-primary">Suivante</button>
+  </div>
+</form>
