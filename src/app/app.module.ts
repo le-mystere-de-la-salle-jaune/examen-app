@@ -16,6 +16,7 @@ import { ListeResultatsComponent } from './liste-resultats/liste-resultats.compo
 import { PageNonTrouveeComponent } from './page-non-trouvee/page-non-trouvee.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfilComponent } from './profil/profil.component';
+import { FiltrePipe } from './pipes/filtre.pipe';
 
 const appRoutes: Routes = [
 
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     ListeResultatsComponent,
     PageNonTrouveeComponent,
     HeaderComponent,
-    ProfilComponent
+    ProfilComponent,
+    FiltrePipe
   ],
   imports: [
     BrowserModule, MDBBootstrapModule, HttpClientModule, RouterModule.forRoot(appRoutes), FormsModule

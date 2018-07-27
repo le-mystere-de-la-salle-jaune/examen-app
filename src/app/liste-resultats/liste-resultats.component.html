@@ -1,5 +1,7 @@
 <app-header></app-header>
-
+<h2>Mes résultats</h2>
+<input type="text" class="form-control" id="recherche" name="recherche" [(ngModel)]="recherche">
+<small id="filtreHelp" class="form-text text-muted">Rechercher parmi les résultats.</small>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -9,7 +11,7 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody *ngFor="let r of resultats">
+    <tbody *ngFor="let r of resultats | filtre:recherche:'titre'">
         <tr>
             <td><i>Date coming soon</i></td>
             <td>{{r.titre}} ({{r.nbQuestions}} questions)</td>

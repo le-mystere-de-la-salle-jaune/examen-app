@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Resultat } from '../domains';
 import { ResultatsService } from '../service/resultats.service';
 import { ActivatedRoute } from '@angular/router';
+import { FiltrePipe } from '../pipes/filtre.pipe';
 
 @Component({
   selector: 'app-liste-resultats',
@@ -12,6 +13,7 @@ export class ListeResultatsComponent implements OnInit {
 
   public resultats: Array<Resultat> = []
   stagiaireId: string
+  recherche: string //utilisé pour filtrer les résultats
 
   constructor(private _resultatService: ResultatsService, private route: ActivatedRoute) {
     this.stagiaireId = route.snapshot.paramMap.get("id");
