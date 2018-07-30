@@ -1,6 +1,15 @@
-# SuperApp [![Build Status](https://travis-ci.org/le-mystere-de-la-salle-jaune/examen-app.svg?branch=master)](https://travis-ci.org/le-mystere-de-la-salle-jaune/examen-app)
+# ExamenApp [![Build Status](https://travis-ci.org/le-mystere-de-la-salle-jaune/examen-app.svg?branch=master)](https://travis-ci.org/le-mystere-de-la-salle-jaune/examen-app)
 
 https://le-mystere-de-la-salle-jaune.github.io/examen-app/
+
+## Choix du stagiaire
+![choix_stagiaire](https://s22.postimg.cc/uwoa2n441/Super_App.png)
+
+## Editer un stagiaire
+![editer_stagiaire](https://s22.postimg.cc/8xhvff7u9/Super_App_1.png)
+
+## Examens et résultats du stagiaire
+![resultats_stagiaire](https://s22.postimg.cc/betmmozgh/Super_App_2.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
