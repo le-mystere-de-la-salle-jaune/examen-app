@@ -12,13 +12,6 @@ export class StagiaireService {
 
   constructor(private _http: HttpClient) { }
 
-  // listerStagiaires(): Promise<Stagiaire[]> {
-  //   return this._http.get(`${environment.backendUrl}/api/stagiaires`).toPromise()
-  //     .then(
-  //       (data: any[]) => data.map(el => new Stagiaire(el.id, el.nom, el.prenom, el.email, el.photo_url))
-  //     );
-  // }
-
   listerStagiaires(): Observable<Stagiaire[]> {
     return this._http.get(`${environment.backendUrl}/api/stagiaires`).pipe(
       map(

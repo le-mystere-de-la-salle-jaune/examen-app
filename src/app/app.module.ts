@@ -16,13 +16,17 @@ import { ListeResultatsComponent } from './liste-resultats/liste-resultats.compo
 import { PageNonTrouveeComponent } from './page-non-trouvee/page-non-trouvee.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfilComponent } from './profil/profil.component';
+import { PasserExamenComponent } from './passer-examen/passer-examen.component';
 import { FiltrePipe } from './pipes/filtre.pipe';
+
 
 const appRoutes: Routes = [
 
   { path: 'choix-stagiaires', component: ListeStagiaireComponent }, // /page1 affiche le composant A
 
   { path: ':id/examens', component: ListeExamensComponent }, // /page2 affiche le composant B
+
+  { path: ':id/examens/:idExam', component: PasserExamenComponent },
 
   { path: ':id/resultats', component: ListeResultatsComponent}, 
 
@@ -46,6 +50,7 @@ const appRoutes: Routes = [
     PageNonTrouveeComponent,
     HeaderComponent,
     ProfilComponent,
+    PasserExamenComponent,
     FiltrePipe
   ],
   imports: [

@@ -27,3 +27,21 @@ export class Resultat {
     get nbQuestions() { return this._nbQuestions }
     get noteSur20() { return this._noteSur20 }
 }
+
+export class Option {
+    constructor(public id:number, public libelle:string){
+
+    }
+}
+
+export class Question {
+    constructor(public id:number, public titre:string, public options:Array<Option>, public last:boolean){
+
+    }
+}
+
+export class ResultQuestion {
+    constructor(public id_stagiaire:number, public id_examen:number, public id_question:number, public id_option_question:number){
+
+    }
+}
