@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Examen, Question, ResultQuestion } from '../domains'
 import { HttpClient, HttpHeaders } from '../../../node_modules/@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,12 +19,12 @@ export class ExamensService {
   constructor(private _http: HttpClient) {
   }
 
-  listerExamens(id: string): Promise<Examen[]> {
-    return this._http.get(`${environment.backendUrl}/api/examens/${id}`)
-      .toPromise()
-      .then(
+listerExamens(id: string): Observable<Examen[]> {
+    return this._http.get(`${environment.backendUrl}/api/examens/${id}`).pipe(
+      map(
         (data: any[]) => data.map(el => new Examen(el.id, el.titre))
       )
+    )
   }
 
   demanderQuestion(idExamen: string, idStagiaire: string): Promise<Question> {
@@ -39,4 +41,5 @@ export class ExamensService {
           (el: any) => new ResultQuestion(el.id_stagiaire, el.id_examen, el.id_question, el.id_option_question))
     }
   }
+
 }

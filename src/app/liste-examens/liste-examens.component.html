@@ -1,15 +1,17 @@
 <app-header></app-header>
-
+<h2>Mes examens</h2>
+<input type="text" class="form-control" id="recherche" name="recherche" [(ngModel)]="recherche">
+<small id="filtreHelp" class="form-text text-muted">Rechercher parmi les examens.</small>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Libellé</th>
-      <th>Action</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody *ngFor="let e of examens">
+  <tbody *ngFor="let e of examens | filtre:recherche:'titre'">
       <tr>
-        <td>{{e.titre}}</td>
+        <td style="width: 90%">{{e.titre}}</td>
         <td><a routerLink="{{e.id}}" class="btn btn-primary">Démarrer</a></td>
       </tr>
   </tbody>
